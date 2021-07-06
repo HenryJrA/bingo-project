@@ -2,9 +2,9 @@
 
 
 body {
-	background-color: #659e9d;
-	color: black;
-  padding: 10px 30px 50px 80px;
+	background-image:src ="https://www.wallpapertip.com/wmimgs/72-720590_bingo-ball-background.png";
+	color: rgb(190, 139, 18);
+    padding: 10px 30px 50px 80px;
 	font-size: 28px;
 	font-family: 'Indie Flower', cursive;
 }

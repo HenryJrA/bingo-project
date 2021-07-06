@@ -44,10 +44,10 @@ for(i=0; i<=24; i++){
     
 }
 init()
-// const squares = document.getElementById("square");
-// squares.forEach((square)=>{
-//     square.addEventListener("click","handleClick")
-// })
+const squares = document.getElementById("square");
+squares.forEach((square)=>{
+    square.addEventListener("click","handleClick")
+})
     
 
 
