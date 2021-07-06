@@ -33,14 +33,15 @@ var winSets = [
 
 function init(){
 for(i=0; i<=24; i++){
-    let n= Math.floor(Math.random() * range) + miniNum;
-    if (n >= 1 && n <= 20) letter ="B"    
-    if (n >= 21 && n <= 40) letter ="I"
-    if (n >= 41 && n <= 60) letter ="N"
-    if (n >= 61 && n <= 80) letter ="G"
-    if (n >= 81 && n <= 100) letter ="O"
+    let rdmnm= Math.floor(Math.random() * range) + miniNum;
+    if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
+    if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
+    if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
+    if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
+    if (rdmnm >= 81 && rdmnm <= 100) letter ="O"
+    if(n.indexOf(rdmnm) < 0) rdmnm.push(n);
     
-    console.log(letter + n);
+    console.log(letter + rdmnm);
     
     
 }
