@@ -15,7 +15,8 @@
     
 // }
 // }
-board.onclick = function(e){
+let table = document.querySelector("table")
+table.onclick = function(e){
     console.log(e);
     highlight(e.target);
 
@@ -42,6 +43,7 @@ for(i=0; i<=24; i++){
     console.log(letter + n);
     
     
+}
 }
 init()
 const squares = document.getElementById("square");
