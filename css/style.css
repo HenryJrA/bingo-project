@@ -10,7 +10,7 @@ body {
 }
 h3 { font-size: 1rem; margin: 0; padding: 0.5em; text-align: center; background: #3d3d3d; color: #fff; }
 
-#ballGraphic, #ballText {
+/* #ballGraphic, #ballText {
     padding: 0.8em 1.3em;
     margin: 0.5em auto;
     border-radius: 100%;
@@ -62,7 +62,7 @@ h3 { font-size: 1rem; margin: 0; padding: 0.5em; text-align: center; background:
     margin: 0 auto;
 }
 /* Ball Colors */
-#ballGraphic.blue {
+/* #ballGraphic.blue {
     background: radial-gradient(circle at 20% 20%, #0000FF, #0000ad);
 }
 #ballGraphic.blue #ballText {
@@ -91,8 +91,8 @@ h3 { font-size: 1rem; margin: 0; padding: 0.5em; text-align: center; background:
 }
 #ballGraphic.orange #ballText {
     border: 0.15rem solid #FFA500;
-}
-
+} */
+ */
 
 
 
