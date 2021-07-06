@@ -15,14 +15,14 @@
     
 // }
 // }
-// board.onclick = function(e){
-//     console.log(e);
-//     highlight(e.target);
+board.onclick = function(e){
+    console.log(e);
+    highlight(e.target);
 
-// }
-// function highlight(div){
-//     div.classList.toggle("highligh");
-// }
+}
+function highlight(div){
+    div.classList.toggle("highligh");
+}
 
 let  miniNum = 1;
 let maxNum = 100;
