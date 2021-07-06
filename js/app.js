@@ -31,17 +31,17 @@ let n = [];
 let letter;
 
 function init(){
-for(i=0; i<=25; i++){
+for(i=0; i<=24; i++){
     let n= Math.floor(Math.random() * range) + miniNum;
     if (n >= 1 && n <= 20) letter ="B"    
     if (n >= 21 && n <= 40) letter ="I"
     if (n >= 41 && n <= 60) letter ="N"
     if (n >= 61 && n <= 80) letter ="G"
     if (n >= 81 && n <= 100) letter ="O"
-    console.log(letter + n)
+    
+    console.log(letter + n);
     
     
-}
 }
 init()
 // const squares = document.getElementById("square");
