@@ -34,7 +34,7 @@ var winSets = [
 function init(){
 for(i=0; i<=24; i++){
     // query seletor by element or class and ten
-    let rdmnm= Math.floor(Math.random() * range) + miniNum;
+    let rdmnm= Math.floor(Math.random() * maxNum) + miniNum;
     let B = Math.floor(Math.random() * 20) + 1
     let B1 = Math.floor(Math.random() * 19) + 2
     let B2 = Math.floor(Math.random() * 18) + 3
@@ -55,6 +55,11 @@ for(i=0; i<=24; i++){
     let G2 = Math.floor(Math.random() * 78) + 63;
     let G3 = Math.floor(Math.random() * 77) + 64;
     let G4 = Math.floor(Math.random() * 79) + 45;
+    let O = Math.floor(Math.random() * 100) + 81;
+    let O1 = Math.floor(Math.random() * 100) + 81;
+    let O2 = Math.floor(Math.random() * 100) + 81;
+    let O3 = Math.floor(Math.random() * 100) + 81;
+    let O4 = Math.floor(Math.random() * 100) + 81;
     // if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
     // if(n.indexOf(rdmnm) < 0) rdmnm.push(n);
     
@@ -79,6 +84,11 @@ for(i=0; i<=24; i++){
     document.getElementById("square17").innerHTML=G2 
     document.getElementById("square18").innerHTML=G3
     document.getElementById("square19").innerHTML=G4
+    document.getElementById("square20").innerHTML=O
+    document.getElementById("square21").innerHTML=O1
+    document.getElementById("square22").innerHTML=O2
+    document.getElementById("square23").innerHTML=O3
+    document.getElementById("square24").innerHTML=O4
     if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
     if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
     if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
