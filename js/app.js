@@ -35,17 +35,17 @@ function init(){
 for(i=0; i<=24; i++){
     // query seletor by element or class and ten
     let rdmnm= Math.floor(Math.random() * range) + miniNum;
-    let B = Math.floor(Math.random() * 24) + 1
-    let B1 = Math.floor(Math.random() * 23) + 1
-    let B2 = Math.floor(Math.random() * 22) + 1
-    let B3 = Math.floor(Math.random() * 21) + 1
-    let B4 = Math.floor(Math.random() * 20) + 1
-    
+    let B = Math.floor(Math.random() * 20) + 1
+    let B1 = Math.floor(Math.random() * 19) + 2
+    let B2 = Math.floor(Math.random() * 18) + 3
+    let B3 = Math.floor(Math.random() * 17) + 4
+    let B4 = Math.floor(Math.random() * 16) + 5
+    let I = Math.floor(Math.random() * 40) + 21;
+    let I1 = Math.floor(Math.random() * 39) + 22;
+    let I2 = Math.floor(Math.random() * 38) + 23;
+    let I3 = Math.floor(Math.random() * 37) + 24;
+    let I4 = Math.floor(Math.random() * 36) + 25;
     // if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
-    if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
-    if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
-    if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
-    if (rdmnm >= 81 && rdmnm <= 100) letter ="O"
     // if(n.indexOf(rdmnm) < 0) rdmnm.push(n);
     
     console.log(letter + rdmnm);
@@ -54,22 +54,26 @@ for(i=0; i<=24; i++){
     document.getElementById("square2").innerHTML=B2 
     document.getElementById("square3").innerHTML=B3 
     document.getElementById("square4").innerHTML=B4 
-    document.getElementById("square4").innerHTML=I 
-    document.getElementById("square4").innerHTML=I 
-    document.getElementById("square4").innerHTML=I
-    document.getElementById("square4").innerHTML=I
-    document.getElementById("square4").innerHTML=I
-    document.getElementById("square4").innerHTML=N 
-    document.getElementById("square4").innerHTML=N 
-    document.getElementById("square4").innerHTML=N 
-    document.getElementById("square4").innerHTML=N 
-    document.getElementById("square4").innerHTML=N 
-    document.getElementById("square4").innerHTML=G
-    document.getElementById("square4").innerHTML=G
-    document.getElementById("square4").innerHTML=G 
-    document.getElementById("square4").innerHTML=G
-    document.getElementById("square4").innerHTML=G
-
+    document.getElementById("square5").innerHTML=I 
+    document.getElementById("square6").innerHTML=I1 
+    document.getElementById("square7").innerHTML=I2
+    document.getElementById("square8").innerHTML=I3
+    document.getElementById("square9").innerHTML=I4
+    document.getElementById("square10").innerHTML=N 
+    document.getElementById("square11").innerHTML=N 
+    document.getElementById("square12").innerHTML=N 
+    document.getElementById("square13").innerHTML=N 
+    document.getElementById("square14").innerHTML=N 
+    document.getElementById("square15").innerHTML=G
+    document.getElementById("square16").innerHTML=G
+    document.getElementById("square17").innerHTML=G 
+    document.getElementById("square18").innerHTML=G
+    document.getElementById("square19").innerHTML=G
+    if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
+    if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
+    if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
+    if (rdmnm >= 81 && rdmnm <= 100) letter ="O"
+    
 }
 }
 
