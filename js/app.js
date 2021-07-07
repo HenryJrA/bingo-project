@@ -45,6 +45,16 @@ for(i=0; i<=24; i++){
     let I2 = Math.floor(Math.random() * 38) + 23;
     let I3 = Math.floor(Math.random() * 37) + 24;
     let I4 = Math.floor(Math.random() * 36) + 25;
+    let N = Math.floor(Math.random() * 60) + 41;
+    let N1 = Math.floor(Math.random() * 59) + 42;
+    let N2 = Math.floor(Math.random() * 58) + 43;
+    let N3 = Math.floor(Math.random() * 57) + 44;
+    let N4 = Math.floor(Math.random() * 56) + 45;
+    let G = Math.floor(Math.random() * 80) + 61;
+    let G1 = Math.floor(Math.random() * 79) + 62;
+    let G2 = Math.floor(Math.random() * 78) + 63;
+    let G3 = Math.floor(Math.random() * 77) + 64;
+    let G4 = Math.floor(Math.random() * 79) + 45;
     // if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
     // if(n.indexOf(rdmnm) < 0) rdmnm.push(n);
     
@@ -60,15 +70,15 @@ for(i=0; i<=24; i++){
     document.getElementById("square8").innerHTML=I3
     document.getElementById("square9").innerHTML=I4
     document.getElementById("square10").innerHTML=N 
-    document.getElementById("square11").innerHTML=N 
-    document.getElementById("square12").innerHTML=N 
-    document.getElementById("square13").innerHTML=N 
-    document.getElementById("square14").innerHTML=N 
+    document.getElementById("square11").innerHTML=N1 
+    document.getElementById("square12").innerHTML=N2 
+    document.getElementById("square13").innerHTML=N3 
+    document.getElementById("square14").innerHTML=N4 
     document.getElementById("square15").innerHTML=G
-    document.getElementById("square16").innerHTML=G
-    document.getElementById("square17").innerHTML=G 
-    document.getElementById("square18").innerHTML=G
-    document.getElementById("square19").innerHTML=G
+    document.getElementById("square16").innerHTML=G1
+    document.getElementById("square17").innerHTML=G2 
+    document.getElementById("square18").innerHTML=G3
+    document.getElementById("square19").innerHTML=G4
     if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
     if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
     if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
