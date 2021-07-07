@@ -34,33 +34,32 @@ var winSets = [
 function init(){
 for(i=0; i<=24; i++){
     // query seletor by element or class and ten
-    let rdmnm= Math.floor(Math.random() * maxNum) + miniNum;
-    let B = Math.floor(Math.random() * 20) + 1
-    let B1 = Math.floor(Math.random() * 19) + 2
-    let B2 = Math.floor(Math.random() * 18) + 3
-    let B3 = Math.floor(Math.random() * 17) + 4
-    let B4 = Math.floor(Math.random() * 16) + 5
-    let I = Math.floor(Math.random() * 40) + 21;
-    let I1 = Math.floor(Math.random() * 39) + 22;
-    let I2 = Math.floor(Math.random() * 38) + 23;
-    let I3 = Math.floor(Math.random() * 37) + 24;
-    let I4 = Math.floor(Math.random() * 36) + 25;
-    let N = Math.floor(Math.random() * 60) + 41;
-    let N1 = Math.floor(Math.random() * 59) + 42;
-    let N2 = Math.floor(Math.random() * 58) + 43;
-    let N3 = Math.floor(Math.random() * 57) + 44;
-    let N4 = Math.floor(Math.random() * 56) + 45;
-    let G = Math.floor(Math.random() * 80) + 61;
-    let G1 = Math.floor(Math.random() * 79) + 62;
-    let G2 = Math.floor(Math.random() * 78) + 63;
-    let G3 = Math.floor(Math.random() * 77) + 64;
-    let G4 = Math.floor(Math.random() * 79) + 45;
-    let O = Math.floor(Math.random() * 100) + 81;
-    let O1 = Math.floor(Math.random() * 100) + 81;
-    let O2 = Math.floor(Math.random() * 100) + 81;
-    let O3 = Math.floor(Math.random() * 100) + 81;
-    let O4 = Math.floor(Math.random() * 100) + 81;
-    // if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
+    let rdmnm=Math.floor(Math.random()*(maxNum-miniNum+1)+miniNum)
+    let B = Math.floor(Math.random() *  (20) + 1)
+    let B1 = Math.floor(Math.random() * (20) + 1)
+    let B2 = Math.floor(Math.random() * (20) + 1)
+    let B3 = Math.floor(Math.random() * (20) + 1)
+    let B4 = Math.floor(Math.random() * (20) + 1)
+    let I = Math.floor(Math.random() *  (40-20+1) + 21);
+    let I1 = Math.floor(Math.random() * (40-20+1) + 21);
+    let I2 = Math.floor(Math.random() * (40-20+1) + 21);
+    let I3 = Math.floor(Math.random() * (40-20+1) + 21);
+    let I4 = Math.floor(Math.random() * (40-20+1) + 21);
+    let N = Math.floor(Math.random() *  (60-41+1) + 41);
+    let N1 = Math.floor(Math.random() * (60-41+1) + 41);
+    let N2 = Math.floor(Math.random() * (60-41+1) + 41);
+    let N3 = Math.floor(Math.random() * (60-41+1) + 41);
+    let N4 = Math.floor(Math.random() * (60-41+1) + 41);
+    let G = Math.floor(Math.random() *  (80-61+1) + 61);
+    let G1 = Math.floor(Math.random() * (80-61+1) + 61);
+    let G2 = Math.floor(Math.random() * (80-61+1) + 61);
+    let G3 = Math.floor(Math.random() * (80-61+1) + 61);
+    let G4 = Math.floor(Math.random() * (80-61+1) + 61);
+    let O = Math.floor(Math.random() *  (100-81+1) + 81);
+    let O1 = Math.floor(Math.random() * (100-81+1) + 81);
+    let O2 = Math.floor(Math.random() * (100-81+1) + 81);
+    let O3 = Math.floor(Math.random() * (100-81+1) + 81);
+    let O4 = Math.floor(Math.random() * (100-81+1) + 81);
     // if(n.indexOf(rdmnm) < 0) rdmnm.push(n);
     
     console.log(letter + rdmnm);
@@ -89,6 +88,7 @@ for(i=0; i<=24; i++){
     document.getElementById("square22").innerHTML=O2
     document.getElementById("square23").innerHTML=O3
     document.getElementById("square24").innerHTML=O4
+    if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
     if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
     if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
     if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
