@@ -5,6 +5,12 @@ let range = maxNum - miniNum;
 let n = [];
 let letter;
 // let gameOver = true;
+b= new Array(1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
+i= new Array(21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,),
+n= new Array(41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60),
+g=new Array(61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80),
+o=new Array(81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100)
+const currentBallDiv = document.querySelector("#current-ball");
 let table = document.querySelector("table")
 table.onclick = function(e){
     console.log(e);
@@ -88,42 +94,37 @@ for(i=0; i<=24; i++){
     document.getElementById("square22").innerHTML=O2
     document.getElementById("square23").innerHTML=O3
     document.getElementById("square24").innerHTML=O4
-    if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
-    if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
-    if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
-    if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
-    if (rdmnm >= 81 && rdmnm <= 100) letter ="O"
-    
-    console.log(letter + rdmnm);
-    // 2. add value for the div/id attribute
-    // 3. append the elemnt to the body
+    // if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
+    // if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
+    // if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
+    // if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
+    // if (rdmnm >= 81 && rdmnm <= 100) letter ="O"
+
+
+
+    // function to display a number ebry 5 sec, 
+    // console.log(letter + rdmnm);
+    currentBallDiv.innerHTML = letter + rdmnm
 }
 }
 
 init()
-let letterB =[B, B1, B2, B3, B4];
-let letterI =[I, I1, I2, I3, I4];
-let letterN =[N, N1, N2, N3, N4];
-let letterG =[G, G1, G2, G3, G4];
-let letterO =[O, O1, O2, O3, O4];
-let lineOne =[B, I, N, G, O];
-let lineTwo =[B1, I1, N1, G1, O1];
-let lineThree=[B2, I2, N2, G2, O2];
-let lineFour=[B3, I3, N3, G3, O3];
-let lineFive=[B4, I4, N4, G4, O4];
-let curveOne=[B,I1,N2,G3,O4];
-let curveTwo=[O, G1, ]
+// function checkWinning(){
+//     if(winSets  ==true){
+//         return "BINGO!!"
+//     }else{
+//         return "BAD BINGO"
+//     }
+// }
+// console.log(checkWinning())
+
+
+// const view = document.createElement("div");
+// view.div = "displayScreen";
+// document.input.appendChild(view)
+
 document.getElementById("reset")
 function reset(){
     reset = location.reload()
     reset.addEventListener("click", reload, false)
 }
-function checkWinning{
-    if(letterB || letterI || letterN || letterG|| letterO ||)
-}
-
-
-
-const view = document.createElement("div");
-view.div = "displayScreen";
-document.input.appendChild(view)
