@@ -95,61 +95,35 @@ for(i=0; i<=24; i++){
     if (rdmnm >= 81 && rdmnm <= 100) letter ="O"
     
     console.log(letter + rdmnm);
-    document.createElement("div", "#crtbl")   
     // 2. add value for the div/id attribute
     // 3. append the elemnt to the body
 }
 }
 
 init()
+let letterB =[B, B1, B2, B3, B4];
+let letterI =[I, I1, I2, I3, I4];
+let letterN =[N, N1, N2, N3, N4];
+let letterG =[G, G1, G2, G3, G4];
+let letterO =[O, O1, O2, O3, O4];
+let lineOne =[B, I, N, G, O];
+let lineTwo =[B1, I1, N1, G1, O1];
+let lineThree=[B2, I2, N2, G2, O2];
+let lineFour=[B3, I3, N3, G3, O3];
+let lineFive=[B4, I4, N4, G4, O4];
+let curveOne=[B,I1,N2,G3,O4];
+let curveTwo=[O, G1, ]
 document.getElementById("reset")
 function reset(){
     reset = location.reload()
     reset.addEventListener("click", reload, false)
 }
-// function createBoard() {
-    
-//     // get a reference to the table element that contains the board
-//     var board = document.getElementById("tblsq");
-    
-//     // create the rows and columns that make up the board
-//     for (row = 0; row < NUM_ROWS; row++) {
-        
-//         var tr = document.createElement("tr");
-//         for (col = 0; col < NUM_COLS; col++) {
-            
-//             var td = document.createElement("td");
-            
-//             // by default, all cells are unselected
-//             td.className = "empty";
-//             tr.appendChild(td); 
-            
-//             // make all cells clickable, except FREE space
-//             if (row !== 2 || col !== 2) {
-//                 td.addEventListener("click", clickCell);
-//             }
-//         }
-//         board.appendChild(tr);
-//     }    
-// }
-// const squares = document.getElementById("square");
-// squares.forEach((square)=>{
-//     square.addEventListener("click","handleClick")
-// })
-    
+function checkWinning{
+    if(letterB || letterI || letterN || letterG|| letterO ||)
+}
 
 
-// while (n.length<26){
-//     let rdm= Math.floor(Math.random() * maxNum) + miniNum;
-//     if(!n.includes(rdm)){
-//         n.push(rdm);
-//         console.log(n.sort());
-//     }
-// }
 
-
-// do{
-
-//     randNum = Math.round(Math.random()* maxNum);
-//     console.log(randNum)
-// }while(n == "")
+const view = document.createElement("div");
+view.div = "displayScreen";
+document.input.appendChild(view)
