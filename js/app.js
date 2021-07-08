@@ -13,6 +13,7 @@ table.onclick = function(e){
 }
 function highlight(div){
     div.classList.toggle("highligh");
+    div.style.color = "black"
 }
 var winSets = [
     [0, 1, 2, 3, 4],
@@ -62,7 +63,6 @@ for(i=0; i<=24; i++){
     let O4 = Math.floor(Math.random() * (100-81+1) + 81);
     // if(n.indexOf(rdmnm) < 0) rdmnm.push(n);
     
-    console.log(letter + rdmnm);
     document.getElementById("square0").innerHTML=B 
     document.getElementById("square1").innerHTML=B1 
     document.getElementById("square2").innerHTML=B2 
@@ -94,30 +94,18 @@ for(i=0; i<=24; i++){
     if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
     if (rdmnm >= 81 && rdmnm <= 100) letter ="O"
     
+    console.log(letter + rdmnm);
+    document.createElement("div", "#crtbl")   
+    // 2. add value for the div/id attribute
+    // 3. append the elemnt to the body
 }
 }
 
 init()
-function checkBingo(){
-    winSets.forEach(checkwinning)
-
-}
-function checkwinning(element, index, array){
-    var nummatch = 5;
-    for(i=0; i <element.length; i++){}
-}
-function clickedCell(){
-    if(!gameOver){
-        if(this.className === "picked"){
-            this.className = "empty";
-            this.style.color = "black";
-
-        }else{
-            this.className ==="picked";
-            this.style.color ="red";
-        }
-
-    }
+document.getElementById("reset")
+function reset(){
+    reset = location.reload()
+    reset.addEventListener("click", reload, false)
 }
 // function createBoard() {
     
