@@ -5,11 +5,6 @@ let range = maxNum - miniNum;
 let n = [];
 let letter;
 // let gameOver = true;
-b= new Array(1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20),
-i= new Array(21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,),
-n= new Array(41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60),
-g=new Array(61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80),
-o=new Array(81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100)
 const currentBallDiv = document.querySelector("#current-ball");
 let table = document.querySelector("table")
 table.onclick = function(e){
@@ -33,8 +28,7 @@ var winSets = [
     [3, 8, 13, 18, 23],
     [4, 9, 14, 19, 24],
     [0, 6, 12, 18, 24],
-    [4, 8, 12, 16, 20],
-    [0, 4, 12, 20, 24]
+    [4, 8, 12, 16, 20]
 ];
 
 
@@ -94,31 +88,59 @@ for(i=0; i<=24; i++){
     document.getElementById("square22").innerHTML=O2
     document.getElementById("square23").innerHTML=O3
     document.getElementById("square24").innerHTML=O4
-    // if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
-    // if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
-    // if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
-    // if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
-    // if (rdmnm >= 81 && rdmnm <= 100) letter ="O"
-
-
-
+    if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
+    if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
+    if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
+    if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
+    if (rdmnm >= 81 && rdmnm <= 100) letter ="O"
+    // let nbrArray =[] 
+    
+    // numArray.forEach(init);
+    let numArray = letter + rdmnm
+    const result = Array.from(numArray)
     // function to display a number ebry 5 sec, 
-    // console.log(letter + rdmnm);
-    currentBallDiv.innerHTML = letter + rdmnm
+    currentBallDiv.innerHTML = numArray
+    // numArray.forEach((number, idx) => {
+    //     setTimeout(()=> {
+    //       displayEl.innerHTML = numArray
+    //     }, idx * 5000)
+      
+    
+    console.log(numArray);
+    // 2. add value for the div/id attribute
+    // 3. append the elemnt to the body
+    
+    document.getElementById("new-number")
 }
 }
 
+function bingo(){
+bingo = window.print(numArray)
+bingo.addEventListener("click")
+}
 init()
-// function checkWinning(){
-//     if(winSets  ==true){
-//         return "BINGO!!"
-//     }else{
-//         return "BAD BINGO"
-//     }
-// }
-// console.log(checkWinning())
+let bingoBtn =document.getElementById("bingo")
+bingoBtn.addEventListener("click", handleClick)
+function handleClick(evt){
 
 
+}
+function checkWinning(){
+    if (Math.abs(table[0] + table[1] + table[2] + table[3] + table[4]) === 5) return table[0];
+    if (Math.abs(table[5] + table[6] + table[7] + table[8] + table[9]) === 5) return table[5];
+    if (Math.abs(table[10] + table[11] + table[12] + table[13] + table[14]) === 5) return table[10];
+    if (Math.abs(table[15] + table[16] + table[17] + table[18] + table[19]) === 5) return table[15];
+    if (Math.abs(table[20] + table[21] + table[22] + table[23] + table[24]) === 5) return table[20];
+    if (Math.abs(table[0] + table[5] + table[10] + table[15] + table[20]) === 5) return table[0];
+    if (Math.abs(table[1] + table[6] + table[11] + table[16] + table[21]) === 5) return table[1];
+    if (Math.abs(table[2] + table[7] + table[12] + table[13] + table[14]) === 5) return table[2];
+    if (Math.abs(table[3] + table[8] + table[13] + table[18] + table[23]) === 5) return table[3];
+    if (Math.abs(table[4] + table[9] + table[14] + table[19] + table[24]) === 5) return table[4];
+    if (Math.abs(table[0] + table[6] + table[12] + table[18] + table[24]) === 5) return table[0];
+    if (Math.abs(table[4] + table[8] + table[12] + table[16] + table[20]) === 5) return table[4];
+    return MessageChannel.innerHTML("BINGO!")
+    
+}
 // const view = document.createElement("div");
 // view.div = "displayScreen";
 // document.input.appendChild(view)
