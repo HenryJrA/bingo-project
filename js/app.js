@@ -4,7 +4,9 @@ let maxNum = 100;
 let range = maxNum - miniNum;
 let n = [];
 let letter;
+let winner;
 // let gameOver = true;
+const msg = document.getElementById("message");
 const currentBallDiv = document.querySelector("#current-ball");
 let table = document.querySelector("table")
 table.onclick = function(e){
@@ -119,6 +121,9 @@ bingo = window.print(numArray)
 bingo.addEventListener("click")
 }
 init()
+
+
+function render(){}
 let bingoBtn =document.getElementById("bingo")
 bingoBtn.addEventListener("click", handleClick)
 function handleClick(evt){
@@ -138,7 +143,13 @@ function checkWinning(){
     if (Math.abs(table[4] + table[9] + table[14] + table[19] + table[24]) === 5) return table[4];
     if (Math.abs(table[0] + table[6] + table[12] + table[18] + table[24]) === 5) return table[0];
     if (Math.abs(table[4] + table[8] + table[12] + table[16] + table[20]) === 5) return table[4];
-    return MessageChannel.innerHTML("BINGO!")
+    
+    if(table.includes(null)){
+        return "bad BINGO"
+    }else{
+
+        return msg.innerHTML ="BINGO!"
+    }
     
 }
 // const view = document.createElement("div");

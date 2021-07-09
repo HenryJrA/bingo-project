@@ -8,8 +8,20 @@
     <link rel="stylesheet" href = "./css/style.css">
     <script defer src="./js/app.js"></script>
 <body>
-    <h1>Current ball:</h1>
+    <h1>Bingo Numbers:</h1>
+<div>
+  <p id="ltr"></p>
+  <p id="output"></p>
+</div>    
+<button id="more">Get More Numbers</button>  
+
+<div class="b-array"></div>
+<div class="i-array"></div>
+<div class="n-array"></div>
+<div class="g-array"></div>
+<div class="o-array"></div>
     <h2 id="current-ball"></h2> 
+    <h2 id ="message"></h2>
     <button id="new-number" onClick="window.location.reload();">NEW NUMBER</button>     
     <section class ="table">
         <!-- <input type="text" id="num"> -->
@@ -57,8 +69,8 @@
                 <td class ="squareO" id="square24">&nbsp;</td>
             </tr>
         </table>
-        <button id="reset" onClick="window.location.reload();">RESET</button>
         <button id="bingo" >BINGO!</button>
+        <button id="reset" onClick="window.location.reload();">RESET</button>
     
     
     
