@@ -35,7 +35,7 @@ var winSets = [
 
 
 function init(){
-for(i=0; i<=24; i++){
+
     // query seletor by element or class and ten
     let rdmnm=Math.floor(Math.random()*(maxNum-miniNum+1)+miniNum)
     let B = Math.floor(Math.random() *  (20) + 1)
@@ -90,6 +90,7 @@ for(i=0; i<=24; i++){
     document.getElementById("square22").innerHTML=O2
     document.getElementById("square23").innerHTML=O3
     document.getElementById("square24").innerHTML=O4
+    
     if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
     if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
     if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
@@ -114,7 +115,7 @@ for(i=0; i<=24; i++){
     
     document.getElementById("new-number")
 }
-}
+
 
 function bingo(){
 bingo = window.print(numArray)
