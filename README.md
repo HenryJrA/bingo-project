@@ -1,4 +1,4 @@
-# bingo-project
+ bingo-project
 
 ##objective:
 -create a browser-based game usig HTML, CSS, JS
@@ -6,10 +6,10 @@
 to play the game:
 click [here](https://bingo-project1.surge.sh)./
 
-##Here is my initial wire-frame of how the game should looks like:
-![WireFrame](Pictures/PROJECT.png)
- ## Here is how my game looiks like:
- (Pictures/game.png)
+Here is my initial wire-frame of how the game should looks like:
+![WireFrame](https://imgur.com/9nW8mDi)
+  Here is how my game looiks like:
+ (https://imgur.com/9nW8mDi)
  Technology used :
  HTML
  CSS
