@@ -133,7 +133,7 @@ nums = shuffleNums(nums)
 
 numDisplayIntervalId = setInterval(() => {
     displayNum()
-}, 2000);
+}, 5000);
 
 
 
@@ -159,7 +159,8 @@ function getWinner(){
     }
 }
 
-let bingoBtn =document.getElementById("bingo").addEventListener("click", function(){window.alert("BINGO!!")})
+let bingoBtn =document.getElementById("bingo").addEventListener("click", function(){
+    window.alert("BINGO!!")})
            
 document.getElementById("reset")
 function reset(){

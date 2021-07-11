@@ -3,13 +3,15 @@
 ##objective:
 -create a browser-based game usig HTML, CSS, JS
 
+MOTIVATION:
+During highscool bingo was my favorite game to play when we had time in class or some free time to do so, my friends and i used to play it a lot and i decided why not to make one.
+
 to play the game:
 click [here](https://bingo-project1.surge.sh)./
 
 Here is my initial wire-frame of how the game should looks like:
 WireFrame
  (https://imgur.com/9nW8mDi)
- 
   Here is how my game looks like:
  (https://imgur.com/9nW8mDi)
  
@@ -25,14 +27,14 @@ WireFrame
 pseudocode:
 
 BINGO
-1. GAME START BY A 5X5 GRID WITH NUMBER IN EACH CELL FROM 1 TO 25  RANDOMLY PLACED 
+1. GAME START BY A 5X5 GRID WITH NUMBER IN EACH CELL FROM 1 TO 100  RANDOMLY PLACED 
 2. BIG BALL CONTAINING ALL THE BALLS FOR EACH NUMBER  
   .1 PICK A NUMBER RANDOMLY
-  .2 PLACE EACH NUMBER PICKED BY THE COMPUTER IN A ROW THAT SHOWS ALL THE NUMBERS PICKED
+  
 3. EACH NUMBER WILL BE USED TO COMPARE THE GRID THAT WE HAVE AND TO COMPLETE THAT SQUARE OF NUMBER 
-   .1IF PLAYER COMPLETE A FULL ROW 
+   1.IF PLAYER COMPLETE A FULL ROW 
 ANNOUCE BINGO
-   .2IF PLAYER COMPLETE A COLUMN 
+   2.IF PLAYER COMPLETE A COLUMN 
 ANNOUCE BINGO 
 4. WHOEVER FINISH A ROW OR COLUMN FIRST AND ANNOUCE BINGO FIRST WINS
 
@@ -44,6 +46,8 @@ ANNOUCE BINGO
 -reset top refresh teh page 
 ## Stretch Goals:
 -add a ball that display all the number at a time 
+-add an accurate winning condition, if wrong numbers pressed display "BAD BINGO"
+-add a play/pause button and a button to press whenever the user wants the numbers to be shown
 -fix the CSS and more styling to it with sounds and images
 -fix my code so it can work properly
 -add mobile responsive 
