@@ -5,19 +5,8 @@ let range = maxNum - miniNum;
 let n = [];
 let letter;
 let winner;
-// let gameOver = true;
-const msg = document.getElementById("message");
-const currentBallDiv = document.querySelector("#current-ball");
-let table = document.querySelector("table")
-table.onclick = function(e){
-    console.log(e);
-    highlight(e.target);
+let player;
 
-}
-function highlight(div){
-    div.classList.toggle("highligh");
-    div.style.color = "black"
-}
 var winSets = [
     [0, 1, 2, 3, 4],
     [5, 6, 7, 8, 9],
@@ -34,10 +23,23 @@ var winSets = [
 ];
 
 
+let tables = document.querySelector("table")
+const currentBallDiv = document.querySelector("#current-ball");
+const newNbr = document.getElementById("new-number");
+
+tables.onclick = function(e){
+    console.log(e);
+    highlight(e.target);
+    
+}
+function highlight(div){
+    div.classList.toggle("highligh");
+    div.style.color = "black"
+}
+
+init()
 function init(){
 
-    // query seletor by element or class and ten
-    let rdmnm=Math.floor(Math.random()*(maxNum-miniNum+1)+miniNum)
     let B = Math.floor(Math.random() *  (20) + 1)
     let B1 = Math.floor(Math.random() * (20) + 1)
     let B2 = Math.floor(Math.random() * (20) + 1)
@@ -91,47 +93,52 @@ function init(){
     document.getElementById("square23").innerHTML=O3
     document.getElementById("square24").innerHTML=O4
     
-    if (rdmnm >= 1 && rdmnm <= 20) letter ="B"    
-    if (rdmnm >= 21 && rdmnm <= 40) letter ="I"
-    if (rdmnm >= 41 && rdmnm <= 60) letter ="N"
-    if (rdmnm >= 61 && rdmnm <= 80) letter ="G"
-    if (rdmnm >= 81 && rdmnm <= 100) letter ="O"
-    // let nbrArray =[] 
+
+    player =1
     
-    // numArray.forEach(init);
-    let numArray = letter + rdmnm
-    const result = Array.from(numArray)
-    // function to display a number ebry 5 sec, 
-    currentBallDiv.innerHTML = numArray
-    // numArray.forEach((number, idx) => {
-    //     setTimeout(()=> {
-    //       displayEl.innerHTML = numArray
-    //     }, idx * 5000)
-      
+    winner =null
     
-    console.log(numArray);
-    // 2. add value for the div/id attribute
-    // 3. append the elemnt to the body
-    
-    document.getElementById("new-number")
+}   
+
+
+
+
+
+let nums = []
+let numIdxDisplayed = 0
+let numDisplayIntervalId
+
+function fillNums() {
+    for (let i=1; i < 101; i++) {
+        nums.push(i)
+    }
 }
 
-
-function bingo(){
-bingo = window.print(numArray)
-bingo.addEventListener("click")
+function shuffleNums(numArray) {
+    let newArray = []
+    for (i=1; i=numArray.length; i++) {
+        randIdx = Math.floor(Math.random()* numArray.length)
+        newArray.push(numArray.splice(randIdx,1)[0])
+    }
+    return newArray
 }
-init()
 
-
-function render(){}
-let bingoBtn =document.getElementById("bingo")
-bingoBtn.addEventListener("click", handleClick)
-function handleClick(evt){
-
-
+function displayNum() {
+    console.log(nums[numIdxDisplayed])
+    numIdxDisplayed++
+    currentBallDiv.textContent = nums[numIdxDisplayed]
 }
-function checkWinning(){
+fillNums()
+nums = shuffleNums(nums)
+
+numDisplayIntervalId = setInterval(() => {
+    displayNum()
+}, 2000);
+
+
+
+function getWinner(){
+    
     if (Math.abs(table[0] + table[1] + table[2] + table[3] + table[4]) === 5) return table[0];
     if (Math.abs(table[5] + table[6] + table[7] + table[8] + table[9]) === 5) return table[5];
     if (Math.abs(table[10] + table[11] + table[12] + table[13] + table[14]) === 5) return table[10];
@@ -144,19 +151,16 @@ function checkWinning(){
     if (Math.abs(table[4] + table[9] + table[14] + table[19] + table[24]) === 5) return table[4];
     if (Math.abs(table[0] + table[6] + table[12] + table[18] + table[24]) === 5) return table[0];
     if (Math.abs(table[4] + table[8] + table[12] + table[16] + table[20]) === 5) return table[4];
-    
-    if(table.includes(null)){
-        return "bad BINGO"
+    if(highlight =true){
+        return msg.innerHTML = "BINGO"
     }else{
-
+        
         return msg.innerHTML ="BINGO!"
     }
-    
 }
-// const view = document.createElement("div");
-// view.div = "displayScreen";
-// document.input.appendChild(view)
 
+let bingoBtn =document.getElementById("bingo").addEventListener("click", function(){window.alert("BINGO!!")})
+           
 document.getElementById("reset")
 function reset(){
     reset = location.reload()

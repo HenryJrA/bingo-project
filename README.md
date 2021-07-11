@@ -9,6 +9,7 @@ click [here](https://bingo-project1.surge.sh)./
 Here is my initial wire-frame of how the game should looks like:
 WireFrame
  (https://imgur.com/9nW8mDi)
+ 
   Here is how my game looks like:
  (https://imgur.com/9nW8mDi)
  

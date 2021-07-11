@@ -8,18 +8,10 @@
     <link rel="stylesheet" href = "./css/style.css">
     <script defer src="./js/app.js"></script>
 <body>
-    <h1>Bingo Numbers:</h1>
-
- 
-   
-<button id="more">Get More Numbers</button>  
-
-
+    <h3>Bingo Numbers:</h3>
+    <h1 id="bingoboard"></h1>
     <h2 id="current-ball"></h2> 
-    <h2 id ="message"></h2>
-    <button id="new-number" onClick="window.location.reload();">NEW NUMBER</button>     
     <section class ="table">
-        <!-- <input type="text" id="num"> -->
         <table id="tblsq">
             <tr>
                 <th>B</th>
@@ -64,12 +56,8 @@
                 <td class ="squareO" id="square24">&nbsp;</td>
             </tr>
         </table>
-        <button id="bingo" >BINGO!</button>
         <button id="reset" onClick="window.location.reload();">RESET</button>
-    
-    
-    
-    
+        <button id="bingo" >BINGO!</button>
     </section>
 </body>
 </html>
