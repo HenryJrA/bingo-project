@@ -7,7 +7,7 @@
 During highscool bingo was my favorite game to play when we had time in class or some free time to do so, my friends and i used to play it a lot and i decided why not to make one.
 
 to play the game:
-click [here](bingo-webgame.surge.sh).
+click [here](https://bingo-webgame.surge.sh/).
 
 Here is my initial wire-frame of how the game should looks like:
 ## WireFrame:
