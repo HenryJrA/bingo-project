@@ -1,5 +1,5 @@
 window.onload = initAll;
-var usedNums = new Array(76);
+var usedNums = new Array(26);
 
 const currentBallDiv = document.querySelector("#current-ball");
 function initAll() {
@@ -12,6 +12,47 @@ function initAll() {
 	}
 }
 
+function checkWin() {
+	var winningOption = -1;
+	var setSquares = 0;
+	var winners = new Array(31,992,15360,507904,541729,557328,1083458,2162820,4329736,8519745,8659472,16252928);
+  
+	for (var i=0; i<24; i++) {
+	  var currSquare = "square" + i;
+	  if (document.getElementById(currSquare).className != "") {
+		document.getElementById(currSquare).className = "pickedBG";
+		setSquares = setSquares | Math.pow(2,i);
+	  }
+	}
+  
+	for (var i=0; i<winners.length; i++) {
+	  if ((winners[i] & setSquares) == winners[i]) {
+		winningOption = i;
+	  }
+	}
+  
+	if (winningOption > -1) {
+	  // Display "Bingo" on the screen
+	  var bingoDiv = document.createElement("div");
+	  bingoDiv.innerHTML = "BINGO";
+	  bingoDiv.style.position = "absolute";
+	  bingoDiv.style.top = "50%";
+	  bingoDiv.style.left = "50%";
+	  bingoDiv.style.transform = "translate(-50%, -50%)";
+	  bingoDiv.style.fontSize = "150px";
+	  bingoDiv.style.color = "red";
+	  bingoDiv.style.textAlign = "center";
+	  document.body.appendChild(bingoDiv);
+  
+	  for (var i=0; i<24; i++) {
+		if (winners[winningOption] & Math.pow(2,i)) {
+		  currSquare = "square" + i;
+		  document.getElementById(currSquare).className = "winningBG";
+		}
+	  }
+	}
+  };
+  
 
 function newCard() {
 	for (var i=0; i<24; i++) {
@@ -22,8 +63,8 @@ function newCard() {
 
 function setSquare(thisSquare) {
 	var currSquare = "square" + thisSquare;
-	var colPlace = new Array(0,0,0,0,0,1,1,1,1,1,2,2,2,2,3,3,3,3,3,4,4,4,4,4);
-	var colBasis = colPlace[thisSquare] * 15;
+	var colPlace = new Array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+	var colBasis = colPlace[thisSquare] * 1;
 	var newNum;
 
 	do {
@@ -38,7 +79,7 @@ function setSquare(thisSquare) {
 
 
 function getNewNum() {
-	return Math.floor(Math.random() * 15);
+	return Math.floor(Math.random() * 25);
 }
 
 
@@ -66,34 +107,33 @@ function toggleColor(evt) {
 }
 
 
-function checkWin() {
-	var winningOption = -1;
-	var setSquares = 0;
-	var winners = new Array(31,992,15360,507904,541729,557328,1083458,2162820,4329736,8519745,8659472,16252928);
+// 	var winningOption = -1;
+// 	var setSquares = 0;
+// 	var winners = new Array(31,992,15360,507904,541729,557328,1083458,2162820,4329736,8519745,8659472,16252928);
 
-	for (var i=0; i<24; i++) {
-		var currSquare = "square" + i;
-		if (document.getElementById(currSquare).className != "") {
-			document.getElementById(currSquare).className = "pickedBG";
-			setSquares = setSquares | Math.pow(2,i);
-		}
-	}
+// 	for (var i=0; i<24; i++) {
+// 		var currSquare = "square" + i;
+// 		if (document.getElementById(currSquare).className != "") {
+// 			document.getElementById(currSquare).className = "pickedBG";
+// 			setSquares = setSquares | Math.pow(2,i);
+// 		}
+// 	}
 
-	for (var i=0; i<winners.length; i++) {
-		if ((winners[i] & setSquares) == winners[i]) {
-			winningOption = i;
-		}
-	}
+// 	for (var i=0; i<winners.length; i++) {
+// 		if ((winners[i] & setSquares) == winners[i]) {
+// 			winningOption = i;
+// 		}
+// 	}
 	
-	if (winningOption > -1) {
-		for (var i=0; i<24; i++) {
-			if (winners[winningOption] & Math.pow(2,i)) {
-				currSquare = "square" + i;
-				document.getElementById(currSquare).className = "winningBG";
-			}
-		}
-	}
-};
+// 	if (winningOption > -1) {
+// 		for (var i=0; i<24; i++) {
+// 			if (winners[winningOption] & Math.pow(2,i)) {
+// 				currSquare = "square" + i;
+// 				document.getElementById(currSquare).className = "winningBG";
+// 			}
+// 		}
+// 	}
+// };
 
 
 
@@ -103,7 +143,7 @@ let numIdxDisplayed = 0
 let numDisplayIntervalId
 
 function fillNums() {
-    for (let i=1; i < 101; i++) {
+    for (let i=1; i < 26; i++) {
         nums.push(i)
     }
 }
