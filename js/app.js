@@ -12,47 +12,6 @@ function initAll() {
 	}
 }
 
-function checkWin() {
-	var winningOption = -1;
-	var setSquares = 0;
-	var winners = new Array(31,992,15360,507904,541729,557328,1083458,2162820,4329736,8519745,8659472,16252928);
-  
-	for (var i=0; i<24; i++) {
-	  var currSquare = "square" + i;
-	  if (document.getElementById(currSquare).className != "") {
-		document.getElementById(currSquare).className = "pickedBG";
-		setSquares = setSquares | Math.pow(2,i);
-	  }
-	}
-  
-	for (var i=0; i<winners.length; i++) {
-	  if ((winners[i] & setSquares) == winners[i]) {
-		winningOption = i;
-	  }
-	}
-  
-	if (winningOption > -1) {
-	  // Display "Bingo" on the screen
-	  var bingoDiv = document.createElement("div");
-	  bingoDiv.innerHTML = "BINGO";
-	  bingoDiv.style.position = "absolute";
-	  bingoDiv.style.top = "50%";
-	  bingoDiv.style.left = "50%";
-	  bingoDiv.style.transform = "translate(-50%, -50%)";
-	  bingoDiv.style.fontSize = "150px";
-	  bingoDiv.style.color = "red";
-	  bingoDiv.style.textAlign = "center";
-	  document.body.appendChild(bingoDiv);
-  
-	  for (var i=0; i<24; i++) {
-		if (winners[winningOption] & Math.pow(2,i)) {
-		  currSquare = "square" + i;
-		  document.getElementById(currSquare).className = "winningBG";
-		}
-	  }
-	}
-  };
-  
 
 function newCard() {
 	for (var i=0; i<24; i++) {
@@ -66,7 +25,7 @@ function setSquare(thisSquare) {
 	var colPlace = new Array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
 	var colBasis = colPlace[thisSquare] * 1;
 	var newNum;
-
+	
 	do {
 		newNum = colBasis + getNewNum() + 1;
 	}
@@ -83,7 +42,7 @@ function getNewNum() {
 }
 
 
-function anotherCard() {
+function anotherCard() { 
 	for (var i=1; i<usedNums.length; i++) {
 		usedNums[i] = false;
 	}
@@ -91,82 +50,133 @@ function anotherCard() {
 	return false;
 }
 
-
-function toggleColor(evt) {
-	if (evt) {
-		var thisSquare = evt.target;
-	}	else {
-		var thisSquare = window.event.srcElement;
+function checkWin() {
+	var winningOption = -1;
+	var setSquares = 0;
+	var winners = new Array(31,992,15360,507904,541729,557328,1083458,2162820,4329736,8519745,8659472,16252928);
+	
+	for (var i=0; i<24; i++) {
+		var currSquare = "square" + i;
+		if (document.getElementById(currSquare).className != "") {
+			document.getElementById(currSquare).className = "pickedBG";
+		setSquares = setSquares | Math.pow(2,i);
 	}
-	if (thisSquare.className == "") {
-		thisSquare.className = "pickedBG";
-	}	else {
-		thisSquare.className = "";
-	}
-	checkWin();
 }
 
+for (var i=0; i<winners.length; i++) {
+	if ((winners[i] & setSquares) == winners[i]) {
+		winningOption = i;
+	}
+}
 
-// 	var winningOption = -1;
-// 	var setSquares = 0;
-// 	var winners = new Array(31,992,15360,507904,541729,557328,1083458,2162820,4329736,8519745,8659472,16252928);
-
-// 	for (var i=0; i<24; i++) {
-// 		var currSquare = "square" + i;
-// 		if (document.getElementById(currSquare).className != "") {
-// 			document.getElementById(currSquare).className = "pickedBG";
-// 			setSquares = setSquares | Math.pow(2,i);
-// 		}
-// 	}
-
-// 	for (var i=0; i<winners.length; i++) {
-// 		if ((winners[i] & setSquares) == winners[i]) {
-// 			winningOption = i;
-// 		}
-// 	}
+if (winningOption > -1) {
+	// Display "Bingo" on the screen
+	var bingoDiv = document.createElement("div");
+	bingoDiv.innerHTML = "BINGO";
+	bingoDiv.style.position = "absolute";
+	bingoDiv.style.top = "50%";
+	bingoDiv.style.left = "50%";
+	bingoDiv.style.transform = "translate(-50%, -50%)";
+	bingoDiv.style.fontSize = "150px";
+	bingoDiv.style.color = "red";
+	bingoDiv.style.textAlign = "center";
+	document.body.appendChild(bingoDiv);
 	
-// 	if (winningOption > -1) {
-// 		for (var i=0; i<24; i++) {
-// 			if (winners[winningOption] & Math.pow(2,i)) {
-// 				currSquare = "square" + i;
-// 				document.getElementById(currSquare).className = "winningBG";
-// 			}
-// 		}
+	for (var i=0; i<24; i++) {
+		if (winners[winningOption] & Math.pow(2,i)) {
+			currSquare = "square" + i;
+			document.getElementById(currSquare).className = "winningBG";
+		}
+	}
+}
+};
+
+
+// function toggleColor(evt) {
+// 	if (evt) {
+// 		var thisSquare = evt.target;
+// 	}	else {
+// 		var thisSquare = window.event.srcElement;
 // 	}
-// };
-
-
-
+// 	if (thisSquare.className == "") {
+// 		thisSquare.className = "pickedBG";
+// 	}	else {
+// 		thisSquare.className = "";
+// 	}
+// 	checkWin();
+// }
+function toggleColor(evt) {
+	clearInterval(numDisplayIntervalId)
+  
+	if (!nums.length) {
+	  fillNums()
+	  nums = shuffleNums(nums)
+	}
+  
+	numDisplayIntervalId = setInterval(() => {
+	  currentBallDiv.innerHTML = nums[numIdxDisplayed]
+	  numIdxDisplayed = (numIdxDisplayed + 1) % nums.length
+	  if (!nums.length) {
+		clearInterval(numDisplayIntervalId)
+	  }
+	}, 1000)
+  }
+  
 
 let nums = []
 let numIdxDisplayed = 0
 let numDisplayIntervalId
 
 function fillNums() {
-    for (let i=1; i < 26; i++) {
-        nums.push(i)
+	for (let i=1; i < 26; i++) {
+		nums.push(i)
     }
 }
 
 function shuffleNums(numArray) {
-    let newArray = []
-    for (i=1; i=numArray.length; i++) {
-        randIdx = Math.floor(Math.random()* numArray.length)
+	let newArray = []
+    for (i=0; i=numArray.length; i++) {
+		randIdx = Math.floor(Math.random()* numArray.length)
         newArray.push(numArray.splice(randIdx,1)[0])
     }
     return newArray
 }
 
 function displayNum() {
-    console.log(nums[numIdxDisplayed])
+	console.log(nums[numIdxDisplayed])
     numIdxDisplayed++
     currentBallDiv.textContent = nums[numIdxDisplayed]
+	document.getElementById('numDisplay').innerHTML = numIdxDisplayed
+	document.getElementById('saveNums').innerHTML = nums
+
+	if(displayNum === nums.length){
+		clearInterval(intervalId);
+	}5000
 }
+
 fillNums()
 nums = shuffleNums(nums)
 
 numDisplayIntervalId = setInterval(() => {
-    displayNum()
-}, 5000);
+	displayNum()
+}, 7000);
+
+
+let numsGenerated = [];
+
+
+function storeAndDisplayNum() {
+    let newNum = getNewNum();
+    numsGenerated.push(newNum);
+    let numDisplay = document.getElementById("numDisplay");
+    numDisplay.innerHTML = numsGenerated.join(", ");
+}
+
+document.getElementById("numDisplay").addEventListener("click", function () {
+    storeAndDisplayNum();
+});
+
+
+// document.getElementById("numDisplay").innerHTML = numsGenerated.join(", ");
 
 
